@@ -203,3 +203,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Sphinx documentation build files
+docs/_build/
+
+# Mac system files
+.DS_Store
+*.DS_Store
