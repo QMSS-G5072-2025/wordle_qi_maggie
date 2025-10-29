@@ -38,6 +38,20 @@ def check_guess(secret_word, guess):
     -------
     list
         List of tuples (letter, color) where color is 'green', 'yellow', or 'gray'.
+        
+    Examples
+    --------
+    >>> check_guess("apple", "apple")
+    [('a', 'green'), ('p', 'green'), ('p', 'green'), ('l', 'green'), ('e', 'green')]
+    
+    >>> check_guess("apple", "apply")
+    [('a', 'green'), ('p', 'green'), ('p', 'green'), ('l', 'green'), ('y', 'gray')]
+    
+    >>> check_guess("apple", "pilot")
+    [('p', 'yellow'), ('i', 'gray'), ('l', 'yellow'), ('o', 'gray'), ('t', 'gray')]
+    
+    >>> check_guess("apple", "grape")
+    [('g', 'gray'), ('r', 'gray'), ('a', 'yellow'), ('p', 'yellow'), ('e', 'green')]
     """
     if len(secret_word) != len(guess):
         return []
@@ -83,6 +97,21 @@ def is_valid_word(word, word_list):
     -------
     bool
         True if word is in the list, False otherwise.
+
+    Examples
+    --------
+    >>> word_bank = ["apple", "banana", "cherry", "grape", "orange"]
+    >>> is_valid_word("apple", word_bank)
+    True
+    
+    >>> is_valid_word("APPLE", word_bank)  # case insensitive
+    True
+    
+    >>> is_valid_word("mango", word_bank)
+    False
+    
+    >>> is_valid_word("", word_bank)
+    False
     """
     return word.lower() in [w.lower() for w in word_list]
 
