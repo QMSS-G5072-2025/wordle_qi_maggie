@@ -37,7 +37,6 @@ select = [
     "UP",  # pyupgrade
 ]
 
-<<<<<<< HEAD
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -50,5 +49,4 @@ sphinx = "^7.0"
 sphinx-rtd-theme = "^1.0"                                           
 myst-parser = "^2.0"                                                            
 sphinx-autodoc-typehints = "^1.0"
- 
->>>>>>> 2c2175dfc261e8bdf8dca6420b8388ec9c1bda27
+
