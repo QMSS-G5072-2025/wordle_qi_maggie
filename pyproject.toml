@@ -40,7 +40,7 @@ select = [
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-=======
+
 [tool.uv]
 package = true
 
