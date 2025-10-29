@@ -1,44 +1,28 @@
-[project]
-name = "wordle_qi_maggie"
+[tool.poetry]
+name = "wordle-qi-maggie"
 version = "0.1.0"
 description = "A Wordle game implementation package"
+authors = ["Maggie Qi <qq2144@columbia.edu>"]
 readme = "README.md"
-authors = [
-  {name = "Maggie Qi", email = "qq2144@columbia.edu"}
-]
-maintainers = [
-  {name = "Maggie Qi", email = "qq2144@columbia.edu"}
-]
-classifiers = [
-    # TODO
-]
-license = {text = "MIT"}
-dependencies = [
-  "typer"
-]
-requires-python = ">= 3.10"
+license = "MIT"
+packages = [{include = "wordle_qi_maggie", from = "src"}]
 
-[project.optional-dependencies]
-test = [
-    "coverage",  # testing
-    "pytest",  # testing
-    "ruff",  # linting
-    "ty", # checking types
-    "ipdb", # debugging
-]
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.9.0"
 
-[project.urls]
-bugs = "https://github.com/Maggie Qi/wordle_qi_maggie/issues"
-changelog = "https://github.com/Maggie Qi/wordle_qi_maggie/blob/master/changelog.md"
-homepage = "https://github.com/Maggie Qi/wordle_qi_maggie"
+[tool.poetry.group.dev.dependencies]
+sphinx = "^7.0"
+sphinx-rtd-theme = "^1.0"
+myst-parser = "^2.0"
+sphinx-autodoc-typehints = "^1.0"
+coverage = "^7.0"
+pytest = "^7.0"
+ruff = "^0.1.0"
+ipdb = "^0.13.0"
 
-[project.scripts]
+[tool.poetry.scripts]
 wordle_qi_maggie = "wordle_qi_maggie.cli:app"
-
-[tool.ty]
-# All rules are enabled as "error" by default; no need to specify unless overriding.
-# Example override: relax a rule for the entire project (uncomment if needed).
-# rules.TY015 = "warn"  # For invalid-argument-type, warn instead of error.
 
 [tool.ruff]
 line-length = 120
@@ -53,5 +37,6 @@ select = [
     "UP",  # pyupgrade
 ]
 
-[tool.uv]
-package = true
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
